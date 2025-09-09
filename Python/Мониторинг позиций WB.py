@@ -5,7 +5,7 @@ https://search.wb.ru/exactmatch/ru/common/v13/search?ab_testing=false&appType=64
 for i, product in enumerate(res.json()['data']['products']):
   print(i, product['name'])
 res.json()['data']['products'][0]
-# Результат выполнения 
+""" Результат выполнения 
 {'id': 225223196,
  'time1': 3,
  'time2': 34,
@@ -62,7 +62,7 @@ res.json()['data']['products'][0]
   'tp': 'c'},
  'logs': 'MkFNeTvgmIh3pbBT/krjFyhGhG4Ea3J1ZINkFDwFRbc6dTTowaf03JvOQyYvMl8amKQHckQ/RQ',
  'meta': {'tokens': [], 'presetId': 500050798}}
-
+"""
 query = 'антифриз'
 max_page = 2
 brand = 'SINTEC'
@@ -116,7 +116,7 @@ for page in range(1, max_page + 1):
         ])
 
 search_arr
-# Результат выполнения
+""" Результат выполнения
 [['Антифриз EURO G11 (-45°С) зеленый, силикатный 5кг',
   1025,
   329,
@@ -208,7 +208,7 @@ search_arr
   'b',
   'антифриз',
   datetime.datetime(2026, 9, 6, 13, 34, 38)]]
-
+"""
 import pandas as pd
 
 df = pd.DataFrame(search_arr)
@@ -219,7 +219,7 @@ df['year'] = df['dt'].dt.year
 
 df.groupby(['name', 'query', 'year'])[['pos', 'promopos']].mean()
 
-# Результат выполнения
+""" Результат выполнения
 			pos	promopos
 name	query	year		
 Антифриз Antifreeze OEM China OAT red -40 5кг	антифриз	2025	504.0	65.0
@@ -231,3 +231,4 @@ name	query	year
 Антифриз Синтек EURO G11 (-40) зеленый 5 кг по цене 4 кг	антифриз	2026	1177.0	180.0
 Антифриз Синтек LUXE G12+ (-40) красный 5 кг	антифриз	2025	813.0	144.0
 Антифриз готовый фиолетовый Синтек MULTIFREEZE 5кг	антифриз	2025	315.0	38.0
+"""
